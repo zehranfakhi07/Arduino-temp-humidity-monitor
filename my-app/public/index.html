@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>My App</title>
+	<style>
+		:root { color-scheme: light dark; }
+		body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 0; display: grid; min-height: 100svh; place-items: center; }
+		main { text-align: center; padding: 2rem; }
+		h1 { font-size: 2.25rem; margin: 0 0 0.5rem; }
+		p { opacity: 0.8; margin: 0.25rem 0 1.25rem; }
+		button { padding: 0.6rem 1rem; border: 1px solid #8885; border-radius: 0.5rem; background: #fff2; cursor: pointer; }
+		button:hover { background: #fff3; }
+		footer { position: fixed; bottom: 0.75rem; inset-inline: 0; text-align: center; font-size: 0.875rem; opacity: 0.7; }
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Welcome to My App</h1>
+		<p>Your minimal Node server is running.</p>
+		<button id="btn">Click me</button>
+		<p id="out"></p>
+	</main>
+	<footer>Served by a tiny Node HTTP server</footer>
+	<script>
+		document.getElementById('btn').addEventListener('click', () => {
+			document.getElementById('out').textContent = 'Button clicked at ' + new Date().toLocaleTimeString();
+		});
+	</script>
+</body>
+</html>
