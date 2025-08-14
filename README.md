@@ -1,3 +1,35 @@
+### HealthShare Platform
+
+- Backend: FastAPI with JWT auth, field encryption, and role/scoped access
+- Mobile: Expo React Native client for patients/providers
+
+Quick start:
+
+```bash
+# Backend
+cd backend
+pip3 install --break-system-packages -r requirements.txt
+PYTHONPATH=$(pwd) python3 -c "from app.main import init_db; init_db()"
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+```bash
+# Mobile
+cd mobile
+npm install
+# Set EXPO_PUBLIC_API_BASE in mobile/.env to your backend URL
+npm run start
+```
+
+Security features:
+- AES-GCM field encryption for test results, records, prescriptions
+- Argon2 password hashing
+- JWT access tokens
+- Patient-controlled provider access grants with scopes and expiry
+- Audit logging for key actions
+
+---
+
 # Arduino-temp-humidity-monitor
 This Arduino project shows the current temperature and humidity on an LCD screen using a DHT11 sensor. It's easy to build and perfect for beginners learning about sensors and displays.
 Arduino Temperature and Humidity Monitor
